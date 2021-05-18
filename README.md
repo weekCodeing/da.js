@@ -4,11 +4,29 @@
 
 ### 提供插件功能
 
+### prompt.vue
+
+说明：模拟弹框，标题，输入框，取消，确定
+
+### da-time-picker.vue
+
+说明：slot，自定义选择时间
+
+### da-device-install.vue
+
+说明：扫码搜索设备，清除所有设备，删除设备，搜索设备，根据范围选择设备，从组件里获取最终想要得设备
+
+使用步骤：
+
+```js
+<de-device-install @deviceSn="getDeviceSn"></de-device-install>
+```
+
 ### da-copy.js
 
 使用步骤：
 
-```
+```js
 import daCopy from '@/da-copy.js';
 
 export default {
