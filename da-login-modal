@@ -1,0 +1,125 @@
+<template>
+	<uni-popup :show="show" :custom="true" @change="change">
+		<view class="uni-tip">
+			<view class="uni-tip-title">提示</view>
+			<view class="uni-tip-content">此页面需要授权您的头像、昵称信息</view>
+			<view class="uni-tip-group-button">
+				<!-- #ifdef MP-WEIXIN -->
+				<button @click="getUserInfo" class="uni-tip-button btn">确定</button>
+				<!-- #endif -->
+				<!-- #ifdef MP-ALIPAY -->
+				<button open-type="getAuthorize" @getAuthorize="getUserInfo" scope='userInfo' class="uni-tip-button btn">确定</button>
+				<!-- #endif -->
+			</view>
+		</view>
+	</uni-popup>
+</template>
+
+<script>
+	import UniPopup from '../uni-popup/uni-popup'
+	export default {
+		components: {
+			UniPopup
+		},
+		data() {
+			return {
+				show: false,
+				callback: null,
+				user: null
+			};
+		},
+		methods: {
+			login(callback) {
+				this.$store.dispatch('showLoading',false)
+				this.callback = callback
+				this.getUserInfo()
+			},
+			getUserInfo() {
+				//#ifdef MP-WEIXIN
+				uni.getUserProfile({
+					desc: '用于完善个人资料',
+					lang: 'zh_CN',
+					success: (res) => {
+						console.log('授权成功',res)
+						this.show = false
+						this.user = res
+						this.getLoginUser()
+					},
+					fail: (error) => {
+						console.log('授权失败',error)
+						this.show = true
+					}
+				})
+				//#endif
+				//#ifdef MP-ALIPAY
+				my.getOpenUserInfo({
+					fail: (res) => {
+						this.show = true
+					},
+					success: (res) => {
+						var res = JSON.parse(res.response).response
+						if(res.code != 10000) {
+							this.show = true
+							return
+						}
+						res.gender = res.gender == 'm' ? 1 : (res.gender == 'f' ? 2 : 0)
+						res.country = res.countryCode == "CN" ? '中国' : res.countryCode
+						res.avatarUrl = res.avatar
+						this.show = false
+						this.user = {userInfo:res}
+						this.getLoginUser()
+					}
+				});
+				//#endif
+				
+			},
+			getLoginUser() {
+				console.log('this.user', this.user)
+				this.callback && this.callback(this.user)
+			},
+			change(e) {
+				this.show = e.show
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	.uni-tip {
+		padding: 30rpx;
+		width: 600rpx;
+		background: #fff;
+		box-sizing: border-box;
+		border-radius: 20rpx;
+	}
+
+	.uni-tip-title {
+		text-align: center;
+		font-weight: bold;
+		font-size: 32rpx;
+		color: #333;
+	}
+
+	.uni-tip-content {
+		padding: 30rpx;
+		font-size: 28rpx;
+		color: #666;
+	}
+
+	.uni-tip-group-button {
+		margin-top: 20rpx;
+		display: flex;
+	}
+
+	.uni-tip-button {
+		width: 100%;
+		text-align: center;
+		font-size: 28rpx;
+		color: #3b4144;
+	}
+
+	.btn {
+		background-color: #1CBBB4;
+		color: #FFFFFF;
+	}
+</style>
