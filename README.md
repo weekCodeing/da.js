@@ -4,6 +4,22 @@
 
 ### 提供插件功能
 
+### cookie.js
+
+说明：cookie读取设置
+
+### bluetooth.js
+
+说明：蓝牙功能模块
+
+### loading.vue
+
+说明：加载组件
+
+### myReply.vue
+
+说明：我的回复（评论）组件
+
 ### vue-admin-webapp.rar
 
 ### da-login-modal.vue
