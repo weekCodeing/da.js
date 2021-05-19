@@ -21,9 +21,9 @@ let o = {
 			let d = o.device
 			msg = msg.toUpperCase()
 			var api = msg.substr(0,6)
-			if(api == 'AA55E6'){
+			if(api == ''){
 				var content = CryptoJs.Decrypt(msg.substr(6,32), d.rootKey1)
-			}else if(api == 'AA55E7'){
+			}else if(api == ''){
 				var content = CryptoJs.Decrypt(msg.substr(6,32), d.rootKey2)
 			}else{
 				var content = CryptoJs.Decrypt(msg.substr(6,32), CryptoJs.str2hexStr(d.userSecret))
@@ -41,7 +41,7 @@ let o = {
 				result.msg = '数据传输失败'
 			}
 			//业务处理
-			if(api == 'AA55E4'){ //设置ID回复
+			if(api == ''){ //设置ID回复
 				var res = parseInt(content.substr(0,2))
 				if(res == 0){
 					result = {
@@ -53,7 +53,7 @@ let o = {
 				}else if(res == 2){
 					result.msg = '设置ID失败,原ID错误'
 				}
-			}else if(api == 'AA55E3'){ //读取ID回复
+			}else if(api == ''){ //读取ID回复
 				if(parseInt(content.substr(0,2)) == 1){
 					result.msg = '数据传输失败'
 				}else{
@@ -62,7 +62,7 @@ let o = {
 						deviceSn: parseInt( content.substr(-8), 16)
 					}
 				}
-			}else if(api == 'AA55E2'){ //获取剩余充电时间
+			}else if(api == ''){ //获取剩余充电时间
 				if(parseInt(content.substr(0,2)) == 1){
 					result.msg = '数据传输失败'
 				}else{
@@ -71,7 +71,7 @@ let o = {
 						deviceTime: parseInt( content.substr(-4), 16)
 					}
 				}
-			}else if(api == 'AA55E1'){ //设置充电时间
+			}else if(api == ''){ //设置充电时间
 				var res = parseInt(content.substr(0,2))
 				if(res == 1){
 					result.msg = '数据传输失败'
@@ -82,7 +82,7 @@ let o = {
 						code: 1
 					}
 				}
-			}else if(api == 'AA55E5'){
+			}else if(api == ''){
 				if(parseInt(content.substr(0,2)) == 1){
 					result.msg = '数据传输失败'
 				}else{
@@ -91,7 +91,7 @@ let o = {
 						token: content.substr(0,24).toUpperCase()
 					}
 				}
-			}else if(api == 'AA55E6'){
+			}else if(api == ''){
 				if(parseInt(content.substr(0,2)) == 1){
 					result.msg = '设置用户秘钥1失败'
 				}else{
@@ -99,7 +99,7 @@ let o = {
 						code: 1,
 					}
 				}
-			}else if(api == 'AA55E7'){
+			}else if(api == ''){
 				if(parseInt(content.substr(0,2)) == 1){
 					result.msg = '设置用户秘钥2失败'
 				}else{
@@ -126,9 +126,9 @@ let o = {
 			var api = msg.substr(0,6);
 			//设置回调
 			d.receiveCall[api] = param
-			if(api == 'AA55E6'){
+			if(api == ''){
 				var msg2 = api + CryptoJs.Encrypt(msg.substr(6,32), d.rootKey1)
-			}else if(api == 'AA55E7'){
+			}else if(api == ''){
 				var msg2 = api + CryptoJs.Encrypt(msg.substr(6,32), d.rootKey2)
 			}else{
 				var msg2 = api + CryptoJs.Encrypt(msg.substr(6,32), CryptoJs.str2hexStr(d.userSecret))
@@ -150,7 +150,7 @@ let o = {
 		setDeviceTime(param){
 			o.device.readToken({
 				success:res=>{
-					var order = 'AA55E1' + res.token.substr(0,20) + o.getHex(o.device.deviceSn,4) + o.getHex(param.time,2)
+					var order = '' + res.token.substr(0,20) + o.getHex(o.device.deviceSn,4) + o.getHex(param.time,2)
 					o.device.sendMsg(order,param)
 					console.log('设置充电成功')
 				},
@@ -162,7 +162,7 @@ let o = {
 		},
 		//读取通信token
 		readToken(param){
-			var order = 'AA55E5' + o.device.randomNum(32)
+			var order = '' + o.device.randomNum(32)
 			o.device.sendMsg(order,param) // this.
 		},
 		//计算校验和
