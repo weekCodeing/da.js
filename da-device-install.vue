@@ -108,6 +108,7 @@
 				// 搜索设备数组
 				deviceArr: [],
 				checkboxArr: [],
+				isConfirm: false,
 			};
 		},
 		created() {
@@ -115,6 +116,7 @@
 		},
 		methods: {
 			confirm() {
+				this.isConfirm = !this.isConfirm
 				var values = this.checkboxArr
 				let device_sns = this.installQuery.device_sn.map(item => {
 					return item.device_sn
@@ -132,6 +134,7 @@
 			},
 			CheckboxChange(e) {
 				var values = e.detail.value;
+				console.log(values,'checkboxchange')
 				this.checkboxArr = values
 			
 				this.deviceArr.forEach((item, index) => {
@@ -153,10 +156,15 @@
 					setTimeout(() => {
 						this.specClass = 'none';
 					}, 250);
-					this.emitFn()
+					if(this.isConfirm) {
+						this.emitFn()
+					} else {
+						this.checkboxArr = []
+					}
 				} else if (this.specClass === 'none') {
 					this.isSeletedAll = false
 					this.specClass = 'show';
+					this.isConfirm = false
 					this.getSearchDevice()
 				}
 			},
@@ -193,19 +201,26 @@
 						})
 						// 赋值绑定设备
 						var values = this.deviceArr
-						this.installQuery.device_sn = []
+						// this.installQuery.device_sn = []
+						// for (var i = 0; i < values.length; i++) {
+						// 	this.installQuery.device_sn.push({
+						// 		device_sn: values[i].device_sn
+						// 	})
+						// }
+						this.checkboxArr = []
+						console.log('this.de',values)
 						for (var i = 0; i < values.length; i++) {
-							this.installQuery.device_sn.push({
-								device_sn: values[i].device_sn
-							})
+							this.checkboxArr.push(values[i].device_sn)
 						}
 					} else {
 						this.deviceArr.forEach(function(item) {
 							return item.disabled = false
 						})
-						this.installQuery.device_sn = []
+						// this.installQuery.device_sn = []
+						this.checkboxArr = []
 					}
 				}
+				
 				console.log(this.installQuery, 'this.installQuery')
 			},
 			deleteDevice(device_sn, index) {
@@ -318,119 +333,5 @@
 </script>
 
 <style lang="scss">
-/*  弹出层 */
-.popup {
-	position: fixed;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 99;
-	&.show {
-		display: block;
-		.mask{
-			animation: showPopup 0.2s linear both;
-		}
-		.layer {
-			animation: showLayer 0.2s linear both;
-		}
-	}
-	&.hide {
-		.mask{
-			animation: hidePopup 0.2s linear both;
-		}
-		.layer {
-			animation: hideLayer 0.2s linear both;
-		}
-	}
-	&.none {
-		display: none;
-	}
-	.mask{
-		position: fixed;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-		background-color: rgba(0, 0, 0, 0.4);
-	}
-	.layer {
-		position: fixed;
-		z-index: 99;
-		bottom: 0;
-		width: 100%;
-		min-height: 50vh;
-		border-radius: 10upx 10upx 0 0;
-		background-color: #fff;
-	}
-	@keyframes showPopup {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-	@keyframes hidePopup {
-		0% {
-			opacity: 1;
-		}
-		100% {
-			opacity: 0;
-		}
-	}
-	@keyframes showLayer {
-		0% {
-			transform: translateY(120%);
-		}
-		100% {
-			transform: translateY(0%);
-		}
-	}
-	@keyframes hideLayer {
-		0% {
-			transform: translateY(0);
-		}
-		100% {
-			transform: translateY(120%);
-		}
-	}
-}
-.box-content {
-	display: flex;
-	flex-direction: row;
-	padding: 2%;
-	.box-title {
-		width: 20%;
-		font-weight: bold;
-	}
-	.box-device {
-		font-size: 35upx;
-		width: 80%;
-		border-radius: 10upx;
-		background-color: #FFFFFF;
-		box-shadow: 0upx 0upx 10upx #CCCCCC;
-		padding: 20upx;
-		.box-item {
-			padding: 15upx 10upx;
-			border-bottom: 0.5px solid #eee;
-			.position-icon {
-				margin-left: 55%;
-			}
-		}
-	}
-}
-.scan-add {
-	font-size: 36upx;
-	margin-left: 12upx !important;
-}
-.delete-all {
-	position: absolute;
-	right: 30upx;
-}
-.scan-logo {
-	position: relative;
-	right: 5upx;
-	font-size: 30upx;
-}
+	@import 'da-device-install.scss';
 </style>
