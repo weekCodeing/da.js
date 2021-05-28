@@ -1,0 +1,67 @@
+.content{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+  overflow-x: hidden;
+}
+.layout-top{
+  width: 100%;
+
+}
+.layout-bottom{
+  width: 100%;
+}
+.screen{
+  text-align: right;
+  width: 100%;
+  padding: 0 10rpx;
+  font-weight: bold;
+  font-size: 60px;
+  box-sizing: border-box;
+  border-top: 1px solid white;
+}
+.btnGroup{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  width: 100%;
+  height: 200rpx;
+  border-color: gold;
+}
+.item{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1px;
+
+  margin-right: 1px;
+
+}
+.item:active{
+  background-color: red;
+}
+.zero{
+  width: 50%;
+}
+.orange{
+  color: white;
+  background: orange;
+  font-weight: bold;
+}
+.blue{
+  color: white;
+  background-color: bold;
+}
+.iconBtn{
+  display: flex;
+}
+.icon{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}

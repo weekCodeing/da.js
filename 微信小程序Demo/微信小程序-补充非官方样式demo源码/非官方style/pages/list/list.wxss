@@ -1,0 +1,36 @@
+
+.ui-list .item{
+    position: relative;
+    padding-top: 26rpx;
+    padding-bottom: 26rpx;
+    padding-left: 40rpx;
+    padding-right: 30rpx;
+}
+.ui-list .item .nowrap{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ui-list .item .name{
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+.ui-list .item .line{
+    content: " ";
+    position: absolute;
+    left: 40rpx;
+    top: 0;
+    right: 0;
+    height: 2rpx;
+    background-color: #F0F0F0;
+}
+.ui-list .item .line-first{
+    left: 0;
+    right: 0;
+}
+.ui-list .item .line-last{
+    left: 0;
+    right: 0;
+    top:initial;
+    bottom: 0;
+}

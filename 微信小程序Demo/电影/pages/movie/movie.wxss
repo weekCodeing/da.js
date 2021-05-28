@@ -1,0 +1,193 @@
+/* pages/movie/movie.wxss */
+.content{
+  font-family: "Microsolt YaHei";
+}
+
+.type{
+  display: flex;
+  flex-direction: row;
+  width: 96%;
+  margin: 0 auto;
+}
+
+.type view{
+  margin: 0 auto;
+}
+
+.select{
+  font-size: 12px;
+  color: red;
+  width: 48%;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 5rpx solid red;
+}
+
+.default{
+  width: 48%;
+  font-size: 12px;
+  text-align: center;
+  height:  45px;
+  line-height: 45px;
+}
+
+.movie{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.pic image{
+  width: 80px;
+  height: 100px;
+  padding: 10px;
+}
+
+.base-info{
+  width: 70%;
+  font-size: 12px;
+  padding-top: 10px;
+  line-height: 20px;
+}
+
+.name{
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.type{
+  color: #555555;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.score{
+  font-size: 18px;
+  color: #FF9900;
+  margin-left: 5px;
+}
+
+.desc{
+  color: #333333;
+}
+
+.hr{
+  height: 1px;
+  width: 100%;
+  background-color: #cccccc;
+  opacity: 0.2;
+}
+
+.btn{
+  position:absolute;
+  right: 10px;
+  margin-top: 50px;
+}
+
+.btn button{
+  width: 52px;
+  height: 25px;
+  font-size: 11px;
+  color: red;
+  border:1px solid red;
+  background-color: #ffffff;
+}
+/*  */
+.hr2{
+  height: 10px;
+  widows: 100%;
+  background-color: #cccccc;
+  opacity: 0.2;
+}
+
+.title{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.intro{
+  width: 60%;
+}
+
+.zhinan{
+  font-size: 16px;
+}
+
+.third{
+  font-size: 13px;
+  color: #cccccc;
+  margin-top: 10px;
+}
+
+.month{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 11px;
+}
+
+.first{
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #FE4E62;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.second{
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #cccccc;
+  margin-right: 10px;
+}
+
+
+.items{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.item{
+  margin-right: 5px;
+  text-align: center;
+}
+
+.movieName{
+  font-size: 12px;
+  text-align: center;
+}
+
+.movieDesc{
+  font-size: 12px;
+  color:#cccccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

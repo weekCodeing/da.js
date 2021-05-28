@@ -1,0 +1,43 @@
+<view class="title title-red">2列图片<text>只图</text></view>
+<view class="ui-list-image cloumn2">
+    <block wx:for-items="{{list4}}">
+        <navigator id="{{item.id}}" url="{{item.id}}" class="item cloumn2">
+            <view>
+                <image class="picture" src="{{item.img}}" mode="aspectFill" />
+            </view>
+        </navigator>
+    </block>
+</view>
+<view class="title title-red">2列图片<text>小字说明</text></view>
+<view class="ui-list-image cloumn2">
+    <block wx:for-items="{{list4}}">
+        <navigator id="{{item.id}}" url="{{item.id}}" class="item cloumn2">
+            <view>
+                <image class="picture" src="{{item.img}}" mode="aspectFill" />
+                <text class="name">{{item.title}}</text>
+            </view>
+        </navigator>
+    </block>
+</view>
+<view class="title title-blue">3列图片<text>小字说明</text></view>
+<view class="ui-list-image cloumn3">
+    <block wx:for-items="{{list6}}">
+        <navigator id="{{item.id}}" url="{{item.id}}" class="item cloumn2">
+            <view>
+                <image class="picture" src="{{item.img}}" mode="aspectFill" />
+                <text class="name">{{item.title}}</text>
+            </view>
+        </navigator>
+    </block>
+</view>
+<view class="title title-red">4列图片<text>小字说明</text></view>
+<view class="ui-list-image cloumn4">
+    <block wx:for-items="{{list8}}">
+        <navigator id="{{item.id}}" url="{{item.id}}" class="item cloumn2">
+            <view>
+                <image class="picture" src="{{item.img}}" mode="aspectFill" />
+                <text class="name">{{item.title}}</text>
+            </view>
+        </navigator>
+    </block>
+</view>

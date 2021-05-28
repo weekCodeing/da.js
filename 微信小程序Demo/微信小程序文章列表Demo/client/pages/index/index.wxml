@@ -1,0 +1,5 @@
+<view wx:for="{{array}}">
+ <view class='item' id='{{item.id}}' bindtap='short'>
+  {{item.id}}-{{item.title}}
+ </view>
+</view>

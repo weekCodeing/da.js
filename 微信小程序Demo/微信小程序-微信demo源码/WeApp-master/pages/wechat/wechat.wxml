@@ -1,0 +1,21 @@
+<scroll-view scroll-y="true">
+  <view class="item-avatar-md" wx:for="{{list}}" wx:for-item="i" data-name="{{i.name}}" data-id="{{i.id}}" bindtap="goPage">
+      <view class="marks" wx:if="{{i.count}}">
+        <text>{{i.count}}</text>
+      </view>
+      <image src="{{i.img}}" />
+      <view class="item-text">
+        <view class="text_box">
+          <view class="flex">
+            <text class="title">{{i.name}}</text>
+          </view>
+          <view class="flex">
+            <text class="message">{{i.message}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="item-time padding_half">
+        <text class="message">{{i.time}}</text>
+      </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,32 @@
+<view class="haibao">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}' style='height: 145px;'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src='{{item}}' class='silde-image' style="width:100%;height:145px;"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='list'>
+  <block wx:for="{{movies}}">
+    <view class='movie' id='{{item.id}}' bindtap='loadMovieDetail'>
+      <view class='pic'>
+        <image src='{{item.pic}}' mode='aspectFit' style='width:85px;height:119px;'></image>
+      </view>
+      <view class='movie-info'>
+        <view class='base-info'>
+          <view class='name'>{{item.name}}</view>
+          <view class='desc'>类型：{{item.type}}</view>
+          <view class='desc'>导演：{{item.dir}}</view>
+          <view class='desc'>主演：{{item.cast}}</view>
+          <view class='desc'>上映：{{item.year}}</view>
+        </view>
+      </view>
+      <view class='btn'>
+        <button>购票</button>
+      </view>
+    </view>
+    <view class='hr'></view>
+  </block>
+</view>

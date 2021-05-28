@@ -1,0 +1,9 @@
+<view class="search-box">
+  <input placeholder='请输入城市名称' bindinput='searchInput'></input>
+  <icon type='search' class='search' bindtap='searchCity'></icon>
+</view>
+<text class='paneltitle'>直辖市、省会城市列表</text>
+<view class='place-box'>
+  <text wx:for="{{chinaCitys}}" bindtap='chinaTaped' id='{{index}}' wx:key="unique">{{item}}</text>
+  <view style='clear:both'></view>
+</view>

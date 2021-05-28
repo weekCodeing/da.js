@@ -1,0 +1,61 @@
+<view class='hr2'>
+</view>
+<view class='title'>
+  <view class='intro'>
+    <view class='zhinan'>每月观影指南</view>
+    <view class='third'>进3个月受期待的影片</view>
+  </view>
+  <view class='month' bindtap='switchMonth'>
+    <view class="{{flag == 0 ? 'first':'second'}}" id='0'>2月</view>
+    <view class="{{flag == 1 ? 'first':'second'}}" id='1'>3月</view>
+    <view class="{{flag == 2 ? 'first':'second'}}" id='3'>4月</view>
+  </view>
+</view>
+
+<swiper current='{flag}' style='height: 200px;'>
+  <swiper-item>
+    <scroll-view scroll-x="true">
+      <view class='items'>
+        <block wx:for="{{movies}}">
+          <view class='item'>
+            <view>
+              <image src='{{item.pic}}' mode='aspectFit' style='width:85px;height:100px;'></image>
+            </view>
+
+            <view class='movieName'>{{item.name}}</view>
+            <view class='movieDesc'>{{item.type}}</view>
+            <view class='movieDesc'>02-24</view>
+
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>2</swiper-item>
+  <swiper-item>3</swiper-item>
+</swiper>
+<view class='hr2'></view>
+
+<view class='list'>
+  <block wx:for="{{movies}}">
+    <view class='movie' id='{{item.id}}'>
+      <view class='pic'>
+        <image src='{{item.pic}}' mode='aspectFit' style='width:85px;height:119px;'></image>
+      </view>
+      <view class='movie-info'>
+        <view class='base-info'>
+          <view class='name'>{{item.name}}</view>
+          <view class='desc'>类型：{{item.type}}</view>
+          <view class='desc'>导演：{{item.dir}}</view>
+          <view class='desc'>主演：{{item.cast}}</view>
+          <view class='desc'>上映：{{item.year}}年</view>
+        </view>
+      </view>
+      <view class='btn'>
+        <button>预售</button>
+      </view>
+    </view>
+    <view class='hr'></view>
+  </block>
+</view>

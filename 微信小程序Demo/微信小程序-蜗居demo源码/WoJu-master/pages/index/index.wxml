@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="head" bindtap="tapHead">
+    <text class="headtext">{{text}}</text>
+    <image class="headimage" mode="aspectFit" src="{{src}}"></image>
+  </view>
+</view>

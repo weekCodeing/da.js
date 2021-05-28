@@ -1,0 +1,13 @@
+<input bindinput='input1' placeholder="请输入您的名字" placeholder-class="placeholder"></input>
+<input bindinput='input2' placeholder="请输入您的语文成绩" placeholder-class="placeholder"></input>
+<input bindinput='input3' placeholder="请输入您的数学成绩" placeholder-class="placeholder"></input>
+
+<button bindtap='test' type='primary'>提交</button>
+
+<view class='content' hidden='{{flag}}'>
+ <view class='content-item'>姓名：{{name}}</view>
+ <view class='content-item'>语文成绩：{{chineseScore}}</view>
+ <view class='content-item'>数学成绩：{{mathScore}}</view>
+ <view class='content-item'>平均分：{{avg}}</view>
+</view>
+

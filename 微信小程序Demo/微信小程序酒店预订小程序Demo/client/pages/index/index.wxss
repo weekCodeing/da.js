@@ -1,0 +1,14 @@
+.page {
+  margin: 0rpx 50rpx 50rpx 50rpx;
+  font-size: 50rpx;
+  background-color: lavender;
+}
+
+.set {
+  margin: 0rpx 0rpx 50rpx 0rpx;
+  width: 100%;
+}
+
+.btn-area {
+  width: 100%;
+}

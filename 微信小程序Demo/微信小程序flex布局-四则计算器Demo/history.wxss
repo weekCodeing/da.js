@@ -1,0 +1,10 @@
+.content{
+  height: 100%;
+  flex-direction: column;
+}
+
+.tem{
+  margin: 3rpx 3rpx 3rpx 3rpx;
+  border: 1px solid black;
+  background: yellowgreen;
+}

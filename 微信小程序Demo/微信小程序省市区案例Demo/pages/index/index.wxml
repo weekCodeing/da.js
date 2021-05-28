@@ -1,0 +1,39 @@
+<!-- 工作原理： 先给出一个省的对象,对象里每一个省都有一个编号，通过省的编号去找市,
+然后市又对应一个对象，每一个市都有一个编号，可通过不同的市去找各自县或者区 -->
+<form bindsubmit='save'>
+      <view class="list">
+          <view class="list-left">地区：</view>
+          <view class="list-right  {{flag ? '' : 'placeholder'}}" bindtap="showPicker"> <!--点击时显示选项卡片  -->
+                  <block wx:if="{{flag}}">
+                    {{provinceName[provinceIndex]}} {{cityName[cityIndex]}} {{countyName[countyIndex]}}
+                  </block>
+                  <block wx:else>请选择所在地区</block>
+          </view>
+      </view>
+      <!-- picker-view里的数据不能用Form进行提交 我们可以先把它保存在inout中然后进行提交 -->
+      <!--也可以分别写3个input分别用于保存省、市、区  -->
+      <input hidden='true' name="test" value='{{provinceName[provinceIndex]}} {{cityName[cityIndex]}} {{countyName[countyIndex]}}'></input>
+  <button disabled = "{{!flag}}" form-type='submit' type='primary'>提 交</button>
+</form>
+<view class="picker" hidden='{{show}}'>
+    <view class="btn-group">
+        <view  bindtap="cancel">取消</view>
+        <view  bindtap="sure">确定</view>
+    </view> 
+    <picker-view class="picker-view" bindchange="pickerChange">
+        <!-- 省 -->
+        <picker-view-column>
+            <view wx:for="{{provinceName}}" wx:key="province" class="item">{{item}}</view>
+        </picker-view-column>
+        <!-- 市 -->
+        <picker-view-column>
+            <view wx:for="{{cityName}}" wx:key="city" class="item">{{item}}</view>
+        </picker-view-column>
+        <!-- 区 -->
+        <picker-view-column>
+            <view wx:for="{{countyName}}" wx:key="district" class="item">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>
+<!--点击选择地区时的遮罩面板，起初是隐藏的 -->
+<view class="mask" bindtap="cancel" hidden="{{show}}"></view>

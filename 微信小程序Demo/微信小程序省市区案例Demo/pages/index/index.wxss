@@ -1,0 +1,59 @@
+page {
+  background: #f7f7f7;
+}
+.list {
+    display: flex;
+    padding: 20rpx 40rpx;
+    background: #fff;
+}
+button {
+  width: 700rpx;
+  margin-top: 200rpx;
+}
+.list-left{
+    width: 120rpx;
+}
+.list-right {
+    flex: 1;
+}
+.placeholder {
+    color: #ccc;
+}
+.item {
+    line-height: 40px;
+    text-align: center;
+}
+.picker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 560rpx;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+}
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 43rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background: #fafafa;
+}
+.picker-view {
+    box-sizing: border-box;
+    width: 100%;
+    height: 560rpx;
+}
+.mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+}

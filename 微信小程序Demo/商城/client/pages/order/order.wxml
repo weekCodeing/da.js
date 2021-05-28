@@ -1,0 +1,35 @@
+<!--pages/order/order.wxml-->
+<image class="bg" src="/images/bg.png"></image>
+<view wx:if="{{!userInfo}}">
+  <view class="unlogin-card">
+    <view class="unlogin-head"></view>
+    <view class="unlogin-info">
+      <view class="unlogin-text">未登录</view>
+      <view class="unlogin-tips">点击微信登录后可方便购物</view>
+    </view>
+  </view>
+  <button class="unlogin-btn" open-type="getUserInfo" bindgetuserinfo="onTapLogin">微信登录</button>
+</view>
+<view wx:elif="{{orderList.length > 0}}">
+  <view class="order-head">
+    <image class="order-head-line" src="/images/line-black.png"></image>
+    <view class="order-head-text">已完成</view>
+  </view>
+  <view wx:for="{{orderList}}" wx:for-index="bindex" wx:for-item="block" wx:key="id" class="order-block">
+    <view wx:for="{{block.list}}" wx:key="id" class="order-card">
+      <image class="order-image" mode="widthFix" src="{{item.image}}"></image>
+      <view class="order-info">
+        <view class="order-name">{{item.name}}</view>
+        <view class="order-price">¥ {{item.price}}</view>
+      </view>
+      <view class="order-opr">
+        <navigator class="order-btn" url="/pages/add-comment/add-comment?id={{item.product_id}}&price={{item.price}}&name={{item.name}}&image={{item.image}}">评价</navigator>
+        <view class="order-count">x{{item.count}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="order-empty" wx:else>
+  <image class="empty-image" src="/images/order.png"></image>
+  <view class="empty-text">暂时还没有订单</view>
+</view>

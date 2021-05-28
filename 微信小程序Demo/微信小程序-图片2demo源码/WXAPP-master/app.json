@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/me/me",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "鲜肉",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color":"#dddddd",
+    "selectedColor":"#ff5a5f",
+    "backgroundColor":"#ffffff",
+    "list":[{
+        "pagePath":"pages/index/index",
+        "iconPath":"images/tabbar/xr_bar_home_nor.png",
+        "selectedIconPath":"images/tabbar/xr_bar_home_hl.png",
+        "text":"鲜肉"
+    },{
+        "pagePath":"pages/me/me",
+        "iconPath":"images/tabbar/xr_bar_me_nor.png",
+        "selectedIconPath":"images/tabbar/xr_bar_me_hl.png",
+        "text":"我"
+    }]
+  },
+  "networkTimeout":{
+    "request":10000,
+    "connectSocket":10000,
+    "uploadFile":10000,
+    "downloadFile":10000
+  }
+}

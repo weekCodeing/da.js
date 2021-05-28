@@ -1,0 +1,16 @@
+/* pages/article/article.wxss */
+.title {
+ text-align: center;
+ background-color: lightblue;
+ font-size: 50rpx;
+ padding: 50rpx;
+ margin-bottom: 50rpx;
+}
+
+.content {
+  background-color: lightcoral;
+  font-size: 50rpx;
+  padding: 50rpx;
+  text-align: left;
+}
+

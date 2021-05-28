@@ -1,0 +1,32 @@
+/**index.wxss**/
+.head {
+  display: flex;
+  height: 80rpx;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+
+.headtext{
+  padding-left: 10px;
+}
+
+.headimage{
+  width: 20px; 
+  height: 20px;
+  padding-left: 5px;
+}

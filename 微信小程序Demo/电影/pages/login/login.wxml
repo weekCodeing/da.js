@@ -1,0 +1,21 @@
+<view class='content'>
+  <view class='hr'></view>
+  <form bindsubmit='formSubmit' bindreset='foremReset'>
+    <view class='bg'>
+      <view class='item'>
+        <view class='name'>账户</view>
+        <view class='value'>
+          <input type='text' placeholder='手机号/会员名/邮箱' placeholder-class='holder' name="name"></input>
+        </view>
+      </view>
+      <view class='line'></view>
+      <view class='item'>
+        <view class='name'>密码</view>
+        <view class='value'>
+          <input type='text' password placeholder='请输入密码' placeholder-class='holder' name="password"></input>
+        </view>
+      </view>
+    </view>
+    <button class='btn' form-type='submit'>保存</button>
+  </form>
+</view>

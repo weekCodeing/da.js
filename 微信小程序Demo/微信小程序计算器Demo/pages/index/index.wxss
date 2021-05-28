@@ -1,0 +1,61 @@
+
+page {
+  background: #000;
+}
+
+.screen {
+  position: fixed;
+  bottom: 780rpx;
+  word-wrap: break-word;
+  width: 750rpx;
+}
+.screen view {
+  color: #fff;
+  font-size: 30px;
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+
+.btnGroup {
+  display: flex;
+  flex-direction: row
+}
+
+.btn-item {
+  width: 189rpx;
+  text-align: center;
+  line-height: 150rpx;
+  border-radius: 0;
+}
+.zero {
+  width: 376rpx;
+}
+
+icon {
+  position: absolute;
+  left: 55rpx;
+  top: 37rpx;
+}
+
+.white {
+  background: #EFEFED;
+}
+.orange {
+  background: #FC9504;
+}
+.gray {
+  background: #CFCFCF;
+}
+.bottom {
+  position: fixed;
+  bottom: 0;
+}
+
+button::after {
+  border-radius: 0;
+}
+
+.shadow {
+  background: #999;
+}

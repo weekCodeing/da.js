@@ -1,0 +1,46 @@
+.content{
+  font-family: "Microsoft YaHei";
+  background-color: #F5F5F5;
+  height: 600px;
+}
+.hr{
+  height: 100px;
+}
+.bg{
+  width:100%;
+  height: 100px;
+  background-color: #ffffff;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  line-height: 50px;
+  align-items: center;
+}
+.name{
+  width:20%;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.value{
+  width:80%;
+  line-height: 60px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+.holder{
+  color:#AEAEAE;
+  font-size: 16px;
+}
+.line{
+  border:1px solid #cccccc;
+  opacity: 0.2;
+}
+.btn{
+  margin-top:20px;
+  background-color: #FE4E62;
+  width: 94%;
+  color: #ffffff;
+}

@@ -1,0 +1,22 @@
+@import "list.wxss";
+
+.ui-list .item .picture{
+    width: 160rpx;
+    height: 120rpx;
+    margin-right: 40rpx;
+    display: block;
+}
+.ui-list .item .name{
+    white-space:inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.ui-list .item .remark{
+    font-weight: normal;
+    margin-top: 10rpx;
+    font-size: .8rem;
+    color: #888888;
+}

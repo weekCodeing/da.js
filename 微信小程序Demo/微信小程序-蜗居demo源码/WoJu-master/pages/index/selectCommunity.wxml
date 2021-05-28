@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="head">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+            当前城市：{{array[index]}}
+        </view>
+     </picker>
+    <image class="headimage" mode="aspectFit" src="{{src}}"></image>
+  </view>
+  <View class="searchInput">
+      <icon type="search" size="23" class="searchImg"/>
+ 	    <input placeholder="输入您所居住的小区名称或地址" bindchange="search"/>
+  </View>
+
+ <scroll-view  scroll-y="true" class="scrollView">
+ <block wx:for="{{movies}}">
+  <View class="addressView" bindtap="bindAddressTap" id="{{item.id}}">
+      <View class="nameText">
+        <image class="homeImage" mode="aspectFit" src="{{homeSrc}}"></image>
+        <Text>{{item.name}}</Text>
+      </View>
+    <View class="addressText"> {{item.address}} </View>
+    </View>
+ </block>
+ </scroll-view>
+ <loading hidden="{{!loading}}">
+    加载中...
+  </loading>
+</view>

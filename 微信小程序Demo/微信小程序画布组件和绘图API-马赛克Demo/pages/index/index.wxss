@@ -1,0 +1,19 @@
+/**index.wxss**/
+.page {
+  margin: 0rpx 50rpx 50rpx 50rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  color: deeppink;
+}
+
+.body{
+  margin: 50rpx 0rpx 10rpx 50rpx;
+}
+
+.canvas {
+  margin: 0rpx 0rpx 20rpx 50rpx;
+  width: 240px;
+  height: 380px;
+}

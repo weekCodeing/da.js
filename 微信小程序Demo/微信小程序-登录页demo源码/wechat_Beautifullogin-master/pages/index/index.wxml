@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<image src="../../images/bg2.png" mode="aspectFill" class="bgImg"></image>
+<view class="container">
+  <image src="../../images/logo.png" mode="aspectFit" class="logo"></image>
+
+  <view class="signTitle">JeasonStudio</view>
+  <view class="whiteLine"></view>
+
+  <block>
+    <block wx:if="{{numShow}}"><icon type="cancel" class="numWaring"></icon></block>
+    <input type="number" bindinput="bindNumInput" bindchange="numChange" placeholder="PhoneNumber" placeholder-class="ph" />
+    <block wx:if="{{psdShow}}"><icon type="cancel" class="psdWaring"></icon></block>
+    <input type="text" bindinput="bindPsdInput" bindchange="psdChange" placeholder="Password" placeholder-class="ph" password="true" />
+  </block>
+
+  <button class="loginBtn" bindtap="loginSubmit" plain="true" hover-class="btnHover">Login</button>
+
+  <a href="" class="info">register or forget Password?</a>
+
+  <view class="footer">Copyright © 2016 JeasonStudio</view>
+  
+</view>

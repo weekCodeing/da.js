@@ -1,0 +1,64 @@
+/**index.wxss**/
+.head {
+  display: flex;
+  height: 10%;
+  flex-direction: row;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.picker{
+  padding-left: 10px;
+}
+
+.headtext{
+  padding-left: 10px;
+}
+
+.headimage{
+  padding-left: 5px;
+  width: 20px; 
+  height: 20px;
+}
+
+.searchInput{
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  height: 6%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.searchImg{
+  padding: 5px;
+}
+
+.addressView{
+  background-color: #FFFFFF;
+  border-bottom:1px #aaa solid;
+  padding: 10px;
+}
+
+.nameText{
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.addressText{
+  font-size: 16px;
+}
+
+.homeImage{
+  width: 24px; 
+  height: 24px;
+  padding-right: 5px;
+}
+
+.scrollView{
+  height: 84%;
+}

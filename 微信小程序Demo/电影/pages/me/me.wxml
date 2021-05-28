@@ -1,0 +1,93 @@
+<!--pages/me/me.wxml-->
+<view class='content'>
+  <view class='hr'></view>
+  <view class='bg'>
+    <view class='head'>
+      <view class='headIcon'>
+        <image src='/images/icon/head.jpg' style='width:70px;height:70px;'></image>
+      </view>
+      <view class='name' bindtap='login'>
+        立即登录
+      </view>
+      <view class='detail'>
+        <text>></text>
+      </view>
+    </view>
+  </view>
+  <view class='hr'></view>
+
+
+<view class='nav'>
+  <view class='nav-item'>
+    <view>
+      <image src='/images/icon/dyp.jpg' style='width:23px;height:23px;'></image>
+    </view>
+    <view>电影票</view>
+  </view>
+  <view class='nav-item'>
+    <view>
+      <image src='/images/icon/ycp.jpg' style='width:23px;height:23px'></image>
+    </view>
+    <view>演出票</view>
+  </view>
+  <view class='nav-item'>
+    <view>
+      <image src='/images/icon/yhq.jpg' style='width:23px;height:23px;'></image>
+    </view>
+    <view>优惠券</view>
+  </view>
+  <view class='nav-item'>
+    <view>
+      <image src='/images/icon/yck.jpg' style='width:23px;height:23px;'></image>
+    </view>
+    <view>影城卡</view>
+  </view>
+</view>
+
+<view class='hr'></view>
+
+<view class='item'>
+  <view class='order'>我的会员</view>
+  <view class='detail2'>
+    <text>></text>
+  </view>
+</view>
+<view class='hr'></view>
+<view class='item'>
+  <view class='order'>想看电影</view>
+  <view class='detail2'>
+    <text>></text>
+  </view>
+</view>
+<view class='xian'></view>
+<view class='item'>
+  <view class='order'>看过的电影</view>
+  <view class='detail2'>
+    <text>></text>
+  </view>
+</view>
+
+<view class='hr'></view>
+
+<view class='item'>
+  <view class='order'>帮助中心-咨询票小蜜</view>
+  <view class='detail2'>
+    <text>></text>
+  </view>
+</view>
+<view class="xian"></view>
+<view class="item">
+  <view class="order">设置</view>
+  <view class="detail2">
+    <text>></text>
+  </view>
+</view>
+<view class="hr"></view>
+<view class="item">
+  <view class="order">银行卡特惠</view>
+  <view class="detail2">
+    <text>></text>
+  </view>
+</view>
+<view class="hr"></view>
+</view>
